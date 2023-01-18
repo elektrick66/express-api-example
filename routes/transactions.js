@@ -11,7 +11,7 @@ const {
 
 router.get('/', getTransactions)
 
-router.get('/:orderID', getTransaction)
+router.get('/:transactionID', getTransaction)
 
 router.post('/', createTransaction) 
 
