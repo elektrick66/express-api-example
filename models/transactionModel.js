@@ -1,12 +1,12 @@
 const mongoose = require ('mongoose')
 
-const TransactionSchema = new mongoose.Schema({
+const transactionSchema = new mongoose.Schema({
   sender: String,
   receiver: String,
   amount: Number,
 })
 
-const Transaction = mongoose.model('Transaction',TransactionSchema)
+const Transaction = mongoose.model('Transaction',transactionSchema)
 
 // const transactions = [
 //     { id: 1, sender: "Louay", receiver: "Aymen", amount: 800 },
