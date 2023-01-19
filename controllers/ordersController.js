@@ -42,7 +42,8 @@ const updateOrder = ((req,res)=>{
     // };
     // orders[index] = updatedOrder;
     // res.status(200).json("Order Updated")
-    Order.findOneAndUpdate({ _id: req.params.orderID }, req.body, { new: true, runValidators: true })
+    Order.findOneAndUpdate({ _id: req.params.orderID }, 
+    req.body, { new: true, runValidators: true })
     .then(result => res.status(200).json({ result }))
     .catch((error) => res.status(404).json({msg: 'Order not found' }))
 });

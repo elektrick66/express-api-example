@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const OrderSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
   name:String,
   price: Number,
 })
 
-const Order = mongoose.model('Order', OrderSchema)
+const Order = mongoose.model('Order', orderSchema)
 
 // const orders = [
 //   { id: 1, name: "iPhone", price: 800 },
