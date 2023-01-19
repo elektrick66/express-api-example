@@ -4,7 +4,11 @@ const app = express();
 const orders_routes = require("./routes/orders")
 const transactions_routes = require("./routes/transactions")
 
-app.listen(3000);
+require('dotenv').config()
+
+mongoose.connect(process.env.MONGO_URI)
+    .then((result) => app.listen(3000))
+    .catch((err) => console.log(Error))
 
 app.use(express.json())
 

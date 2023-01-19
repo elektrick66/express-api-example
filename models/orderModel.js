@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 
 const OrderSchema = new mongoose.Schema({
   name:String,
-  price: Float,
+  price: Number,
 })
 
-const Product = mongoose.model('Order', OrderSchema)
+const Order = mongoose.model('Order', OrderSchema)
 
 // const orders = [
 //   { id: 1, name: "iPhone", price: 800 },
@@ -13,4 +13,4 @@ const Product = mongoose.model('Order', OrderSchema)
 //   { id: 3, name: "iWatch", price: 750 },
 // ];
 
-module.exports = Product;
+module.exports = Order;
