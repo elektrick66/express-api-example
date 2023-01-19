@@ -1,7 +1,8 @@
 const Order = require("../models/orderModel");
 
-const getOrders = ((req, res) => {
+const getOrders = ((req, res) => { //getAllOrders
 //  res.json(orders);
+    console.log('Getting All orders')
     Order.find({})
     .then(result => res.status(200).json({ result }))
     .catch(error => res.status(500).json({msg: error}))
@@ -42,8 +43,7 @@ const updateOrder = ((req,res)=>{
     // };
     // orders[index] = updatedOrder;
     // res.status(200).json("Order Updated")
-    Order.findOneAndUpdate({ _id: req.params.orderID }, 
-    req.body, { new: true, runValidators: true })
+    Order.findOneAndUpdate({ _id: req.params.orderID }, req.body, { new: true, runValidators: true })
     .then(result => res.status(200).json({ result }))
     .catch((error) => res.status(404).json({msg: 'Order not found' }))
 });

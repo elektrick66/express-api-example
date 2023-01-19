@@ -4,7 +4,7 @@ const getTransactions = ((req, res) => {
     // res.json(transactions);
     Transaction.find({})
     .then(result => res.status(200).json({result}))
-    .catch(eerror => res.status(500).json({msg: error}))
+    .catch(error => res.status(500).json({msg: error}))
   });
 
 const getTransaction = ((req, res) => {
@@ -43,8 +43,7 @@ const updateTransaction = ((req,res)=>{
     // };
     // transactions[index] = updatedTransaction;
     // res.status(200).json("Transaction Updated")
-    Transaction.findOneAndUpdate({ _id: req.params.transactionID}, 
-    req.body, { new: true, runValidators: true })
+    Transaction.findOneAndUpdate({ _id: req.params.transactionID}, req.body, { new: true, runValidators: true })
     .then(result => res.status(200).json({ result }))
     .catch((error) => res.status(404).json({msg: 'Transaction not found' }))
 });

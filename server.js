@@ -7,8 +7,11 @@ const transactions_routes = require("./routes/transactions")
 
 require('dotenv').config()
 
+app.listen(process.env.PORT || 3000,()=>{
+    console.log(`Server running on port ${process.env.PORT}`)
+})
 mongoose.connect(process.env.MONGO_URI)
-    .then((result) => app.listen(3000))
+    .then((result) => console.log('Database running'))
     .catch((err) => console.log(Error))
 
 app.use(express.json())
